@@ -2,12 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Tabs } from 'expo-router'
 import React from 'react'
 
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { type IconProps } from '@expo/vector-icons/build/createIconSet';
-import { type ComponentProps } from 'react';
 import { AirbnbIcon, HeartIcon, InboxIcon, ProfileIcon, SearchIcon } from '@/components/Svgs';
-import { BodySmall } from '@/components/text';
-
+import { BodySmall } from '@/components/Text';
 
 const _layout = () => {
     return (

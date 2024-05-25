@@ -2,34 +2,35 @@ import { StyleProp, StyleSheet, Text, TextStyle } from "react-native";
 
 interface TextProps {
     children: React.ReactNode;
-    style?: TextStyle;
+    className?: string;
+    style?: {};
 }
-export const Heading1 = ({ children, style}: TextProps) => (
-    <Text style={[styles.heading1, style]}>{children}</Text>
+export const Heading1 = ({ children, style, className }: TextProps) => (
+    <Text className={className} style={[styles.heading1, style]}>{children}</Text>
 )
-export const Heading2 = ({ children, style } : TextProps) => (
-    <Text style={[styles.heading2, style]}>{children}</Text>
+export const Heading2 = ({ children, style, className } : TextProps) => (
+    <Text className={className} style={[styles.heading2, style]}>{children}</Text>
 )
-export const Heading3 = ({ children, style } : TextProps) => (
-    <Text style={[styles.heading3, style]}>{children}</Text>
+export const Heading3 = ({ children, style, className } : TextProps) => (
+    <Text className={className} style={[styles.heading3, style]}>{children}</Text>
 )
-export const Heading4 = ({ children, style } : TextProps) => (
-    <Text style={[styles.heading4, style]}>{children}</Text>
+export const Heading4 = ({ children, style, className } : TextProps) => (
+    <Text className={className} style={[styles.heading4, style]}>{children}</Text>
 )
-export const Heading5 = ({ children, style } : TextProps) => (
-    <Text style={[styles.heading5, style]}>{children}</Text>
+export const Heading5 = ({ children, style, className } : TextProps) => (
+    <Text className={className} style={[styles.heading5, style]}>{children}</Text>
 )
-export const BodyXLarge = ({ children, style } : TextProps) => (
-    <Text style={[styles.bodyXlarge, style]}>{children}</Text>
+export const BodyXLarge = ({ children, style, className } : TextProps) => (
+    <Text className={className} style={[styles.bodyXlarge, style]}>{children}</Text>
 )
-export const BodyLarge = ({ children, style } : TextProps) => (
-    <Text style={[styles.bodyLarge, style]}>{children}</Text>
+export const BodyLarge = ({ children, style, className } : TextProps) => (
+    <Text className={className} style={[styles.bodyLarge, style]}>{children}</Text>
 )
-export const BodyBase = ({ children, style } : TextProps) => (
-    <Text style={[styles.bodyBase, style]}>{children}</Text>
+export const BodyBase = ({ children, style, className } : TextProps) => (
+    <Text className={className} style={[styles.bodyBase, style]}>{children}</Text>
 )
-export const BodySmall = ({ children, style } : TextProps) => (
-    <Text style={[styles.bodySmall, style]}>{children}</Text>
+export const BodySmall = ({ children, style, className } : TextProps) => (
+    <Text className={className} style={[styles.bodySmall, style]}>{children}</Text>
 )
 
 
