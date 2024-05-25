@@ -1,37 +1,106 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { StyleSheet, Text, View } from 'react-native'
+import { Tabs } from 'expo-router'
+import React from 'react'
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { type IconProps } from '@expo/vector-icons/build/createIconSet';
+import { type ComponentProps } from 'react';
+import { AirbnbIcon, HeartIcon, InboxIcon, ProfileIcon, SearchIcon } from '@/components/Svgs';
+import { BodySmall } from '@/components/text';
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
-  );
+const _layout = () => {
+    return (
+        <Tabs
+
+            screenOptions={{
+                headerShown: false,
+                tabBarShowLabel: false,
+                tabBarStyle: {
+                    paddingHorizontal: 24,
+                    paddingBottom: 12,
+                },
+                tabBarBadgeStyle: {
+                    height: 100,
+                    backgroundColor: "purple"
+                }
+            }}
+        >
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: 'Home',
+                    tabBarIcon: ({ color, focused }) => (
+                        <Tab name='Explore' icon={<SearchIcon />} />
+                    ),
+                    tabBarShowLabel: false
+                }}
+            />
+            <Tabs.Screen
+                name="wishlist"
+                options={{
+                    title: 'ishlist',
+                    tabBarIcon: ({ color, focused }) => (
+                        <Tab name='Wishlist' icon={<HeartIcon />} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="trips"
+                options={{
+                    title: 'Explore',
+                    tabBarIcon: ({ color, focused }) => (
+                        <Tab name='Trips' icon={<AirbnbIcon />} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="inbox"
+                options={{
+                    title: 'Inbox',
+                    tabBarIcon: ({ color, focused }) => (
+                        <Tab name='Inbox' icon={<InboxIcon />} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="profile"
+                options={{
+                    title: 'Profile',
+                    tabBarIcon: ({ color, focused }) => (
+                        <Tab name='Profile' icon={<ProfileIcon />} />
+                    ),
+                }}
+            />
+        </Tabs>
+    )
 }
+
+export default _layout
+
+const styles = StyleSheet.create({})
+
+interface TabProps {
+    icon: React.ReactNode;
+    name: string;
+    active?: boolean;
+}
+const Tab = ({ icon, name }: TabProps) => {
+    return (
+        <View style={tabStyles.container}>
+            <View>
+                {icon}
+            </View>
+            <BodySmall>{name}</BodySmall>
+        </View>
+    )
+}
+
+const tabStyles = StyleSheet.create({
+    container: {
+        gap: 6,
+        height: 44,
+        justifyContent: "space-between",
+        alignItems: 'center',
+    }
+})
