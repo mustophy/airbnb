@@ -14,12 +14,8 @@ const _layout = () => {
                 tabBarShowLabel: false,
                 tabBarStyle: {
                     paddingHorizontal: 24,
-                    paddingBottom: 12,
+                    height: 68,
                 },
-                tabBarBadgeStyle: {
-                    height: 100,
-                    backgroundColor: "purple"
-                }
             }}
         >
             <Tabs.Screen
