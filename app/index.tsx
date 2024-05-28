@@ -10,7 +10,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Redirect href='(tabs)' />
+      <Redirect href='(tabs)/profile' />
     </View>
   );
 }
